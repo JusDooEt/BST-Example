@@ -75,7 +75,7 @@ int main()
 
     cout << "\n\nDelete Node: 8\n";
     root = b.deleteNode(root, 8);
-    cout << "Modified BST tree after deleting Node:";
+    cout << "Modified BST tree after deleting Node:\n";
     b.inorder(root);
 
     cout << "\n\nDelete Node: 10\n";
