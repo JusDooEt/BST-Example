@@ -31,7 +31,7 @@ Modified BST tree after deleting Node:
 This program is meant to be used as a template for future projects needing a BST (Binary Search Tree) data structure. This program includes a class representing all of the necessary functions for a BST. These functions defined below allow a programmer to use the class methods to manipulate and access the nodes of the BST. The code found in [main.cpp](main.cpp) should be used as an example of how to use the class. The code in main provides examples for inserting, traversing, balancing, searching, and deleting nodes in the BST. This is not a program designed for the general user and should be implemented in the backend of another project.
 
 ## BST Class
-![image](https://github.com/JusDooEt/BST-Example/assets/152052216/207c1168-4567-429f-afa8-f0fa286b8ddd)
+![image](https://github.com/JusDooEt/BST-Example/assets/152052216/0c1971fd-2147-42b3-a99b-25d6c2ef7dda)
 
 ## Manipulators
 ### insert (root : BST*, value : int) : BST*
