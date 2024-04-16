@@ -108,6 +108,39 @@ BST* BST::deleteNode(BST* root, int value)
 
 }
 
+void BST::storeNodes(BST* root, vector<BST*>& nodes)
+{
+	if (root == nullptr)
+		return;
+
+	storeNodes(root->left, nodes);
+	nodes.push_back(root);
+	storeNodes(root->right, nodes);
+}
+
+BST* BST::buildTree(vector<BST*>& nodes, int start, int end)
+{
+	if (start > end)
+		return nullptr;
+
+	int mid = (start + end) / 2;
+	BST* root = nodes[mid];
+
+	root->left = buildTree(nodes, start, mid - 1);
+	root->right = buildTree(nodes, mid + 1, end);
+
+	return root;
+}
+
+BST* BST::balanceTree(BST* root)
+{
+	vector<BST*> nodes;
+	storeNodes(root, nodes);
+
+	int n = nodes.size();
+	return buildTree(nodes, 0, n - 1);
+}
+
 void BST::inorder(BST* root)
 {
 	if (root == nullptr)
