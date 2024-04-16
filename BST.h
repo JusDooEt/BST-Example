@@ -11,6 +11,10 @@ private:
 	BST* left;
 	BST* right;
 
+	// Balancing BST helper functions
+	void storeNodes(BST* root, vector<BST*>& nodes);
+	BST* buildTree(vector<BST*>& nodes, int start, int end);
+
 public:
 	BST();
 	BST(int value);
@@ -22,8 +26,6 @@ public:
 	BST* deleteNode(BST* root, int value);
 
 	// Balancing BST
-	void storeNodes(BST* root, vector<BST*>& nodes);
-	BST* buildTree(vector<BST*>& nodes, int start, int end);
 	BST* balanceTree(BST* root);
 
 	// Traversing BST
