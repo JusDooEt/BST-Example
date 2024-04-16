@@ -1,6 +1,7 @@
 #pragma once
 
 #include <iostream>
+#include <vector>
 using namespace std;
 
 class BST
@@ -19,6 +20,11 @@ public:
 	BST* insert(BST* root, int value);
 	BST* search(BST* root, int value);
 	BST* deleteNode(BST* root, int value);
+
+	// Balancing BST
+	void storeNodes(BST* root, vector<BST*>& nodes);
+	BST* buildTree(vector<BST*>& nodes, int start, int end);
+	BST* balanceTree(BST* root);
 
 	// Traversing BST
 	void inorder(BST* root);

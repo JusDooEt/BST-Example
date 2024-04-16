@@ -3,15 +3,26 @@
 
 int main()
 {
+    //====== Variables =============================================
+
     BST b;
     BST *root = NULL;
-    root = b.insert(root, 50);
-    b.insert(root, 30);
-    b.insert(root, 20);
-    b.insert(root, 40);
-    b.insert(root, 70);
-    b.insert(root, 60);
+
+    //==============================================================
+    
+    //====== Inserting Nodes in a BST ==============================
+
+    root = b.insert(root, 10);
+    b.insert(root, 8);
+    b.insert(root, 7);
+    b.insert(root, 6);
+    b.insert(root, 5);
+    //b.insert(root, 60);
     //b.insert(root, 80);
+    
+    //==============================================================
+ 
+    //====== Traversing a BST ======================================
 
     cout << "Original BST: ";
     b.inorder(root);
@@ -23,8 +34,22 @@ int main()
     b.postorder(root);
     cout << endl << endl;
 
+    //==============================================================
+    
+    //====== Balancing a BST =======================================
+    
+    cout << "Balancing BST...\n";
+    root = b.balanceTree(root);
+    cout << "Preorder Traversal: ";
+    b.preorder(root);
+    cout << endl << endl;
+
+    //==============================================================
+
+    //====== Searching in a BST ====================================
+
     int key = 6;
-    // Searching in a BST
+
     cout << "searching for " << key << "...\n";
     if (b.search(root, key) == NULL)
         cout << key << " not found" << endl;
@@ -39,21 +64,26 @@ int main()
     else
         cout << key << " found" << endl;
 
-    cout << "\nDelete a Leaf Node: 20\n";
-    root = b.deleteNode(root, 20);
-    cout << "Modified BST tree after deleting Leaf Node:\n";
+    //==============================================================
+
+    //====== Deleting Nodes in a BST ===============================
+
+    cout << "\nDelete Node: 7\n";
+    root = b.deleteNode(root, 7);
+    cout << "Modified BST tree after deleting Node:\n";
     b.inorder(root);
 
-    cout << "\n\nDelete Node with single child: 70\n";
-    root = b.deleteNode(root, 70);
-    cout << "Modified BST tree after deleting single child Node:";
+    cout << "\n\nDelete Node: 8\n";
+    root = b.deleteNode(root, 8);
+    cout << "Modified BST tree after deleting Node:";
     b.inorder(root);
 
-    cout << "\n\nDelete Node with both child: 50\n";
-    root = b.deleteNode(root, 50);
-    cout << "Modified BST tree after deleting both child Node:\n";
+    cout << "\n\nDelete Node: 10\n";
+    root = b.deleteNode(root, 10);
+    cout << "Modified BST tree after deleting Node:\n";
     b.inorder(root);
 
+    //==============================================================
 
 
     return 0;
